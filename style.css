@@ -1,0 +1,164 @@
+/**
+ * pure-css loading icon
+ * source: https://loading.io/css/
+ * license: CC0
+ **/
+
+.lds-grid {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.lds-grid div {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #2980b9;
+    animation: lds-grid 1.2s linear infinite;
+}
+
+.lds-grid div:nth-child(1) {
+    top: 8px;
+    left: 8px;
+    animation-delay: 0s;
+}
+
+.lds-grid div:nth-child(2) {
+    top: 8px;
+    left: 32px;
+    animation-delay: -0.4s;
+}
+
+.lds-grid div:nth-child(3) {
+    top: 8px;
+    left: 56px;
+    animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(4) {
+    top: 32px;
+    left: 8px;
+    animation-delay: -0.4s;
+}
+
+.lds-grid div:nth-child(5) {
+    top: 32px;
+    left: 32px;
+    animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(6) {
+    top: 32px;
+    left: 56px;
+    animation-delay: -1.2s;
+}
+
+.lds-grid div:nth-child(7) {
+    top: 56px;
+    left: 8px;
+    animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(8) {
+    top: 56px;
+    left: 32px;
+    animation-delay: -1.2s;
+}
+
+.lds-grid div:nth-child(9) {
+    top: 56px;
+    left: 56px;
+    animation-delay: -1.6s;
+}
+
+@keyframes lds-grid {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.25;
+    }
+}
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 4em 1fr;
+}
+
+.stats {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: #ebebeb;
+    line-height: 2em;
+    height: 2em;
+    font-size: x-large;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.board {
+    display: grid;
+    grid-gap: 1rem;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.tile {
+    text-align: center;
+    font-size: 2.5em;
+    background-color: transparent;
+    width: 250px;
+    height: 250px;
+    perspective: 1000px;
+}
+
+/**
+ * Tile flip animation
+ * source: https://www.w3schools.com/howto/howto_css_flip_card.asp
+ * license: public domain
+ **/
+
+.tile-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tile-show-back {
+    transform: rotateY(180deg);
+}
+
+.tile-front, .tile-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 250px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.tile-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.tile-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+}
